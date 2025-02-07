@@ -1,0 +1,13 @@
+GET http://localhost:8080/matematicas
+
+###
+POST http://localhost:8080/programacion
+Content-Type: 'application/json'
+
+{
+    "id": 4,
+    "titulo": "Aprende C",
+    "lenguaje": "c",
+    "vistas": 5000,
+    "nivel": "avanzado"
+}
