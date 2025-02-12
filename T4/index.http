@@ -1,0 +1,16 @@
+GET http://localhost:5000/programacion
+
+###
+POST http://localhost:5000/programacion
+Content-Type: application/json
+
+{
+    "id": 4,
+    "titulo": "Aprende C",
+    "lenguaje": "c",
+    "vistas": 5000,
+    "nivel": "avanzado"
+}
+
+###
+DELETE http://localhost:5000/programacion/4
