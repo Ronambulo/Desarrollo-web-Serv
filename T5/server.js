@@ -11,6 +11,7 @@ app.use(express.json());
 
 // Define the routes
 app.use("/", routes);
+app.use(express.static("storage"));
 
 // Define the port
 const port = process.env.PORT || 5000;
