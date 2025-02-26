@@ -1,9 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const uploadMiddleware = require("../utils/handleStorage");
+const {
+  uploadMiddleware,
+  uploadMiddlewareMemory,
+} = require("../utils/handleStorage");
+const { createItem, getItems, uploadImage } = require("../controllers/storage");
 
-router.post("/", uploadMiddleware.single("image"), (req, res) => {
-  res.send("File uploaded");
-});
+router.post("/", uploadMiddlewareMemory.single("image"), uploadImage);
+router.post("/local", uploadMiddleware.single("image"), createItem);
+router.get("/", getItems);
 
 module.exports = router;

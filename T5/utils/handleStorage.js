@@ -7,11 +7,13 @@ const storage = multer.diskStorage({
     cb(null, pathStorage);
   },
   filename: function (req, file, cb) {
-    const filename = Date.now() + "-" + file.originalname;
+    const filename = file.originalname;
     cb(null, filename);
   },
 });
 
 const uploadMiddleware = multer({ storage });
+const memory = multer.memoryStorage();
+const uploadMiddlewareMemory = multer({ storage: memory });
 
-module.exports = uploadMiddleware;
+module.exports = { uploadMiddleware, uploadMiddlewareMemory };

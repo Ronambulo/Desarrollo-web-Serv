@@ -1,9 +1,14 @@
-const createItem = async (req, res) => {
-  const { body, file } = req;
-  const fileData = {
-    filename: file.filename,
-    url: process.env.PUBLIC_URL + "/" + file.filename,
-  };
-  const data = await storageModel.create(fileData);
-  res.json(data);
-};
+const mongoose = require("mongoose");
+
+const storageSchema = new mongoose.Schema(
+  {
+    filename: String,
+    url: String,
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  }
+);
+
+module.exports = mongoose.model("Storage", storageSchema);
