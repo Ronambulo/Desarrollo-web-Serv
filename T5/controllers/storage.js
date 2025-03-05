@@ -21,7 +21,7 @@ const uploadImage = async (req, res) => {
     const fileBuffer = req.file.buffer;
     const fileName = req.file.originalname;
     const pinataResponse = await uploadToPinata(fileBuffer, fileName);
-    console.log("response:     " + pinataResponse);
+    //console.log("response:     " + pinataResponse);
     const ipfsFile = pinataResponse.IpfsHash;
     const ipfs = `https://${process.env.PINATA_GATEWAY_URL}/ipfs/${ipfsFile}`;
     const data = await storageModel.create({ filename: fileName, url: ipfs });

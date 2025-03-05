@@ -6,8 +6,13 @@ const {
 } = require("../utils/handleStorage");
 const { createItem, getItems, uploadImage } = require("../controllers/storage");
 
-router.post("/", uploadMiddlewareMemory.single("image"), uploadImage);
 router.post("/local", uploadMiddleware.single("image"), createItem);
+router.post("/", uploadMiddlewareMemory.single("image"), uploadImage);
 router.get("/", getItems);
 
+router.use((err, req, res, next) => {
+  if (err) {
+    res.status(413).json({ error: err.message });
+  }
+});
 module.exports = router;
