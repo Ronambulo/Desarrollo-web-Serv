@@ -42,7 +42,7 @@ const updateItem = async (req, res) => {
 const deleteItem = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await tracksModel.findByIdAndDelete(id);
+    const data = await tracksModel.delete({ _id: id });
     if (!data) {
       return res.status(404).send({ error: "Track not found" });
     }

@@ -4,9 +4,17 @@
  * @param {*} res
  */
 
-const getItems = (req, res) => {
-  const data = ["hola", "mundo"];
-  res.send(data);
+const { usersModel } = require("../models/index");
+
+const getItems = async (req, res) => {
+  try {
+    const data = await usersModel.find();
+    res.send(data);
+  } catch (error) {
+    res
+      .status(500)
+      .send({ error: "An error occurred while fetching the tracks" });
+  }
 };
 
 const getItem = (req, res) => {
