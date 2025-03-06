@@ -8,7 +8,7 @@ const validatorCreateItem = [
     .withMessage("Name is required"),
   check("artist.nickname")
     .exists()
-    .isNumeric()
+    .isLength({ min: 3, max: 99 })
     .withMessage("Nickname is required"),
   check("artist.edad").exists().isNumeric().withMessage("Edad is required"),
   check("album")

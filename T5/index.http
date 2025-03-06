@@ -1,21 +1,9 @@
 GET http://localhost:5000/tracks
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NjFmNmY5ZDI5MGU5MGY0ZmYyNjciLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjUxMjg4LCJleHAiOjE3NDEyODcyODh9.N52M5jUZoDNJllweE1VxW9e-KrGbMRR77Q0dyz6dlr0
 
 ###
 GET http://localhost:5000/users
-
-###
-POST http://localhost:5000/tracks
-Content-Type: application/json
-
-{
-    "artist": {
-        "name": "test",
-        "nickname": "test",
-        "edad": 20
-    },
-    "album": "test",
-    "cover": "test"
-}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NjFmNmY5ZDI5MGU5MGY0ZmYyNjciLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjUxMjg4LCJleHAiOjE3NDEyODcyODh9.N52M5jUZoDNJllweE1VxW9e-KrGbMRR77Q0dyz6dlr0
 
 ###
 POST http://localhost:5000/auth/register
@@ -28,6 +16,31 @@ Content-Type: application/json
     "role": "admin",
     "password": "1234asdf"
 }
+
+###
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "1234asdf"
+}
+
+###
+POST http://localhost:5000/tracks
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NWJiYjU1NWY2MzQ3OGI3ZTJhYzkiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjUwNTA2LCJleHAiOjE3NDEyODY1MDZ9.-plumJoRMubDStgRLRG_D3n80FhyB_4ZCWgsemcGXpg
+
+{
+    "artist": {
+        "name": "test",
+        "nickname": "test",
+        "edad": 20
+    },
+    "album": "test",
+    "cover": "test"
+}
+
 
 ###
 PUT http://localhost:5000/tracks/67adbac2f980f6e84ac74590

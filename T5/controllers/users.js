@@ -8,8 +8,9 @@ const { usersModel } = require("../models/index");
 
 const getItems = async (req, res) => {
   try {
+    const user = req.user;
     const data = await usersModel.find();
-    res.send(data);
+    res.send({ data, user });
   } catch (error) {
     res
       .status(500)

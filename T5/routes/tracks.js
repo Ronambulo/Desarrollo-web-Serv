@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { validatorCreateItem } = require("../validators/tracks");
+const { authMiddleware } = require("../middleware/session");
 
 const {
   getItems,
@@ -10,7 +11,7 @@ const {
   deleteItem,
 } = require("../controllers/tracks");
 
-router.get("/", getItems);
+router.get("/", authMiddleware, getItems);
 router.post("/", validatorCreateItem, createItem);
 router.put("/:id", updateItem);
 router.delete("/:id", deleteItem);

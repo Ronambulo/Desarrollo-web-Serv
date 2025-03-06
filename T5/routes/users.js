@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { authMiddleware } = require("../middleware/session");
 const {
   getItems,
   getItem,
@@ -8,7 +9,7 @@ const {
   deleteItem,
 } = require("../controllers/users");
 
-router.get("/", getItems);
+router.get("/", authMiddleware, getItems);
 router.get("/:id", getItem);
 router.post("/", createItem);
 router.put("/:id", updateItem);

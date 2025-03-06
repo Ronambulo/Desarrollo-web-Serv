@@ -15,7 +15,7 @@ const tokenSign = (payload) => {
   return sign;
 };
 
-const tokenVerify = (token) => {
+const tokenVerify = async (token) => {
   try {
     return jwt.verify(token, JWT_SECRET);
   } catch (err) {
