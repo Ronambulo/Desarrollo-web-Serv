@@ -1,5 +1,5 @@
 GET http://localhost:5000/tracks
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NjFmNmY5ZDI5MGU5MGY0ZmYyNjciLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjUxMjg4LCJleHAiOjE3NDEyODcyODh9.N52M5jUZoDNJllweE1VxW9e-KrGbMRR77Q0dyz6dlr0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RiZGMwODhkZjgwOWYwZjFmMzQ4ZDIiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNDYxOTY2LCJleHAiOjE3NDI0OTc5NjZ9.cflpcx3uX0Ya8QQxjcS46_CCcs5m50IPzpTIckBKc-0
 
 ###
 GET http://localhost:5000/users
@@ -38,12 +38,13 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NWJiYjU1NWY2
         "edad": 20
     },
     "album": "test",
-    "cover": "test"
+    "cover": "test",
+    "mediaId": "67dbdd0e0b383542d9b480c7"
 }
 
 
 ###
-PUT http://localhost:5000/tracks/67adbac2f980f6e84ac74590
+PUT http://localhost:5000/tracks/67dbdb6500fea86889f90df0
 Content-Type: application/json
 
 {

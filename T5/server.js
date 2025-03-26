@@ -3,9 +3,21 @@ const cors = require("cors");
 require("dotenv").config();
 const dbConnect = require("./config/mongo");
 const routes = require("./routes/index");
+const morganBody = require("morgan-body");
+const loggerStream = require("./utils/handleLogger");
 
-// Create express instance and configure it
+// Create express instance
 const app = express();
+
+morganBody(app, {
+  noColors: true,
+  skip: function (req, res) {
+    return res.statusCode < 400;
+  },
+  stream: loggerStream,
+});
+
+//configure app
 app.use(cors());
 app.use(express.json());
 

@@ -10,6 +10,10 @@ const tracksSchema = new mongoose.Schema(
     },
     album: { type: String },
     cover: { type: String },
+    mediaId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "storages",
+    },
   },
   {
     timeStamps: true,

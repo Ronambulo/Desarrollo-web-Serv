@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const maxSize = 20; //20kb
+const maxSize = 20000; //20kb
 
 const uploadMiddleware = multer({
   storage,

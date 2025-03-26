@@ -2,7 +2,7 @@ const { tracksModel } = require("../models/index");
 
 const getItems = async (req, res) => {
   try {
-    const data = await tracksModel.find();
+    const data = await tracksModel.find().populate("mediaId");
     res.send(data);
   } catch (error) {
     res
